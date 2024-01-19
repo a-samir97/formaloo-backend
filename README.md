@@ -34,7 +34,6 @@ Building an Appstore system for users, so they can create, sell, and buy applica
      
 ## Swagger Page 
 ![alt text](https://github.com/a-samir97/formaloo-backend/blob/main/docs/swagger.png)
-## Notes and Improvments
 
 ## Tools and Frameworks
 - Python
