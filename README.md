@@ -30,6 +30,7 @@ Building an Appstore system for users, so they can create, sell, and buy applica
   - `/api/unpurchased/apps/`: `GET Method` to get all unpurchased apps (and not created by requested user)
 - Purchase Endpoint
   - `/api/purchase/`: `POST Method` to buy an existing application
+  - Request Body : {"app_id": <app_id>}
      
 ## Swagger Page 
 ![alt text](https://github.com/a-samir97/formaloo-backend/blob/main/docs/swagger.png)
@@ -43,3 +44,11 @@ Building an Appstore system for users, so they can create, sell, and buy applica
 - Swagger
 - Docker
 - Docker Compose
+
+## Dashboard Service
+create a new app called `dashboard` app in our django project, then we can use `appstore` models in our dashboard app
+- for example, we need to get all created application ( then we need to split this into `verified app` and not `verified app`)
+- `Application.objects.count()` all created apps
+- `Application.objects.filter(is_verified=True).count()` all created and verified apps
+- `Application.objects.filter(is_verified=False).count()` all created and not verified apps
+and we can serve this data in an endpoint called `dashboard/apps/` for example
