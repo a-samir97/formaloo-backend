@@ -7,7 +7,7 @@ Building an Appstore system for users, so they can create, sell, and buy applica
 - Each application can be owned by only one user
 
 ## Database Schema
-
+![alt text](https://github.com/a-samir97/formaloo-backend/blob/main/docs/database.png)
 
 ## How to run the projects ?
 - All you need to run `docker-compose up`
@@ -32,7 +32,7 @@ Building an Appstore system for users, so they can create, sell, and buy applica
   - `/api/purchase/`: `POST Method` to buy an existing application
      
 ## Swagger Page 
-
+![alt text](https://github.com/a-samir97/formaloo-backend/blob/main/docs/swagger.png)
 ## Notes and Improvments
 
 ## Tools and Frameworks
