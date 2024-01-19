@@ -22,10 +22,13 @@ class ApplicationViewSet(ModelViewSet):
     serializer_class = ApplicationSerializer
     permission_classes = [IsAuthenticated]
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class UnpurchasedApplicationViewSet(GenericViewSet, ListModelMixin):
     def get_queryset(self):
-        queryset = Application.objects.exclude(owner=self.request.user).exclude(is_verified=True)
+        queryset = Application.objects.exclude(owner=self.request.user)
         return queryset
     serializer_class = UnpurchasedApplicationSerializer
     permission_classes = [IsAuthenticated]
@@ -53,5 +56,5 @@ class PurchaseAPIView(APIView):
             user_wallet.save()
             message = {"msg": "Purchased"}
             return Response(data=message, status=status.HTTP_200_OK)
-        message = {"msg": "insufficent balance"}
+        message = {"msg": "Insufficient balance"}
         return Response(data=message, status=status.HTTP_400_BAD_REQUEST)

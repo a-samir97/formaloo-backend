@@ -9,7 +9,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Application
-        exclude = ("is_verified",)
+        exclude = ("is_verified", "owner")
 
 
 class UnpurchasedApplicationSerializer(serializers.ModelSerializer):
